@@ -1,3 +1,5 @@
+const open = document.getElementById('open');
+
 const keyframes = document.createElement('style');
 
 const container = document.getElementById('container');
@@ -14,7 +16,7 @@ window.addEventListener('keypress', (event) => {
         }
         70% {
             transform: scale(0.9, 1.1) 
-            translateY(${-100 - Math.round(Math.random() * 100)}px) 
+            translateY(${-100 - Math.round(Math.random() * 200)}px) 
             translateX(${Math.round(Math.random() * 300) - 150}px) scale(0);
         }
         100% {
@@ -36,6 +38,8 @@ window.addEventListener('keypress', (event) => {
     letter.style.left = `${Math.round(Math.random() * 100)}%`
 
     container.appendChild(letter);
+
+    open.remove();
 });
 
 setInterval(()=>{container.firstChild.remove()}, 2000);
